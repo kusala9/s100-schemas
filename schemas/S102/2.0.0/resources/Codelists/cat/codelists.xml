@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CT_CodelistCatalogue xmlns="http://standards.iso.org/iso/19115/-3/cat/1.0" 
+   xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" 
+   xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml32="http://www.opengis.net/gml/3.2" 
+   xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/cat/1.0 https://standards.iso.org/iso/19115/-3/cat/1.0/cat.xsd
+   http://standards.iso.org/iso/19115/-3/gco/1.0 http://standards.iso.org/iso/19115/-3/gco/1.0/gco.xsd
+   http://www.opengis.net/gml/3.2 http://standards.iso.org/iso/19136/gml.xsd
+   http://www.w3.org/1999/xlink http://www.w3.org/1999/xlink.xsd">
+<!-- 
+© Copyright 2018
+Prepared under contract for NOAA (Original)
+
+License (Draft)
+Certain parts of this document refer to or are based on the standards, documents, schemas, or other material
+of the International Organization for Standardization (ISO), Open Geospatial Consortium (OGC), International
+Hydrographic Organization / Organisation Hydrographique Internationale (IHO/OHI).
+The ISO material can be obtained from any ISO member and from the Web site of the ISO Central Secretariat
+at www.iso.org.
+The OGC material can be obtained from the OGC Web site at www.opengeospatial.org.
+The IHO material can be obtained from the IHO Web site at www.iho.int or from the International Hydrographic
+Bureau.
+
+Permission to copy and distribute this document is hereby granted provided that this notice is retained
+on all copies, and that IHO and NOAA are credited when the material is redistributed or used in
+part or whole in derivative works.
+Redistributions in binary form must reproduce this notice in the documentation and/or other materials
+provided with the distribution.
+
+Disclaimer
+This work is provided by the copyright holders and contributors "as is" and any express or implied warranties,
+including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose
+are disclaimed. In no event shall the copyright owner or contributors be liable for any direct, indirect,
+incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute
+goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of
+liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of this software, even if advised of the possibility of such damage.
+
+Document history:
+Version 1.0.0 Build 20190502	Prepared by: Raphael Malyankar (Portolan Sciences LLC) for NOAA.
+ -->
+   <!-- 2020-04-14 (RMM) Updated to fix schemaLocation links to resources recently removed by ISO standards.iso.org server -->
+   
+   <!--
+      This codelist catalog contains only S-102 specific codelists.
+    -->
+   <cat:name>
+      <gco:CharacterString>S-102 Metadata Codelists</gco:CharacterString>
+   </cat:name>
+   <cat:scope>
+      <gco:CharacterString>Codelists for S-102 metadata.</gco:CharacterString>
+   </cat:scope>
+   <cat:fieldOfApplication>
+      <gco:CharacterString>Codelists defined for use in S-102 metadata</gco:CharacterString>
+   </cat:fieldOfApplication>
+   <cat:versionNumber>
+      <gco:CharacterString>1.0.0</gco:CharacterString>
+   </cat:versionNumber>
+   <cat:versionDate>
+      <gco:Date>2019-05-02</gco:Date>
+   </cat:versionDate>
+   
+
+<cat:codelistItem>
+      <cat:CT_Codelist id="S102_Griddingmethod">
+         <cat:identifier>
+            <gco:ScopedName codeSpace="http://www.iho.int/S102/2.0.0/md/1.0">S102_GriddingMethod</gco:ScopedName>
+         </cat:identifier>
+         <cat:name>
+            <gco:ScopedName codeSpace="http://www.iho.int/S102/2.0.0/md/1.0">S102_GriddingMethod</gco:ScopedName>
+         </cat:name>
+         <cat:definition>
+            <gco:CharacterString>Gridding method</gco:CharacterString>
+         </cat:definition>
+         <cat:description>
+            <gco:CharacterString>Algorithm used to calculate grid values</gco:CharacterString>
+         </cat:description>
+
+         <cat:codeEntry>
+            <cat:CT_CodelistValue id="S102_GriddingMethod_basicWeightedMean">
+               <cat:identifier>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">basicWeightedMean</gco:ScopedName>
+               </cat:identifier>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">basicWeightedMean</gco:ScopedName>
+               </cat:name>
+               <cat:definition>
+                  <gco:CharacterString>Basic Weighted Mean</gco:CharacterString>
+               </cat:definition>
+               <description><gco:CharacterString>The Basic Weighted Mean algorithm computes an average depth for each grid node. Contributing depth estimates within a given area of influence are weighted and averaged to compute the final nodal value</gco:CharacterString></description>
+            </cat:CT_CodelistValue>
+         </cat:codeEntry>
+
+         <cat:codeEntry>
+            <cat:CT_CodelistValue id="S102_GriddingMethod_shoalestDepth">
+               <cat:identifier>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">shoalestDepth</gco:ScopedName>
+               </cat:identifier>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">shoalestDepth</gco:ScopedName>
+               </cat:name>
+               <cat:definition>
+                  <gco:CharacterString>Shoalest Depth</gco:CharacterString>
+               </cat:definition>
+               <description><gco:CharacterString>The Shoalest Depth algorithm examines depth estimates within a specific area of influence and assigns the shoalest value to the nodal position. The resulting surface represents the shallowest depths across a given area</gco:CharacterString></description>
+            </cat:CT_CodelistValue>
+         </cat:codeEntry>
+
+         <cat:codeEntry>
+            <cat:CT_CodelistValue id="S102_GriddingMethod_tpuWeightedMean">
+               <cat:identifier>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">tpuWeightedMean</gco:ScopedName>
+               </cat:identifier>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">tpuWeightedMean</gco:ScopedName>
+               </cat:name>
+               <cat:definition>
+                  <gco:CharacterString>TPU Weighted Mean</gco:CharacterString>
+               </cat:definition>
+               <description><gco:CharacterString>The Total Propagated Uncertainty (TPU) Weighted Mean algorithm makes use of the depth and associated total propagated uncertainty for each contributing depth estimate to compute a weighted average depth for each nodal position</gco:CharacterString></description>
+            </cat:CT_CodelistValue>
+         </cat:codeEntry>
+
+         <cat:codeEntry>
+            <cat:CT_CodelistValue id="S102_GriddingMethod_cube">
+               <cat:identifier>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">cube</gco:ScopedName>
+               </cat:identifier>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">cube</gco:ScopedName>
+               </cat:name>
+               <cat:definition>
+                  <gco:CharacterString>Combined Uncertainty and Bathymetric Estimator (CUBE)</gco:CharacterString>
+               </cat:definition>
+               <description><gco:CharacterString>The Combined Uncertainty and Bathymetric Estimator, or CUBE makes use of the depth and associated total propagated uncertainty for each contributing depth estimate to compute one or many hypotheses for an area of interest. The resulting hypotheses are used to estimate statistical representative depths at each nodal position</gco:CharacterString></description>
+            </cat:CT_CodelistValue>
+         </cat:codeEntry>
+
+         <cat:codeEntry>
+            <cat:CT_CodelistValue id="S102_GriddingMethod_nearestNeighbour">
+               <cat:identifier>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">nearestNeighbour</gco:ScopedName>
+               </cat:identifier>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">nearestNeighbour</gco:ScopedName>
+               </cat:name>
+               <cat:definition>
+                  <gco:CharacterString>Nearest Neighbour</gco:CharacterString>
+               </cat:definition>
+               <description><gco:CharacterString>The Nearest Neighbour algorithm identifies the nearest depth value within an area of interest and assigns that value to the nodal position. This method does not consider values from neighbouring points</gco:CharacterString></description>
+            </cat:CT_CodelistValue>
+         </cat:codeEntry>
+
+         <cat:codeEntry>
+            <cat:CT_CodelistValue id="S102_GriddingMethod_naturalNeighbour">
+               <cat:identifier>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">naturalNeighbour</gco:ScopedName>
+               </cat:identifier>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">naturalNeighbour</gco:ScopedName>
+               </cat:name>
+               <cat:definition>
+                  <gco:CharacterString>Natural Neighbour</gco:CharacterString>
+               </cat:definition>
+               <description><gco:CharacterString>Natural Neighbour interpolation identifies and weights a subset of input samples within the area of interest to interpolate the final nodal value</gco:CharacterString></description>
+            </cat:CT_CodelistValue>
+         </cat:codeEntry>
+
+         <cat:codeEntry>
+            <cat:CT_CodelistValue id="S102_GriddingMethod_polynomialTendency">
+               <cat:identifier>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">polynomialTendency</gco:ScopedName>
+               </cat:identifier>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">polynomialTendency</gco:ScopedName>
+               </cat:name>
+               <cat:definition>
+                  <gco:CharacterString>Polynomial Tendency</gco:CharacterString>
+               </cat:definition>
+               <description><gco:CharacterString>The Polynomial Tendency gridding method attempts to fit a polynomial trend, or best fit surface to a set of input data points. This method can project trends into areas with little to no data, but does not work well when there is no discernible trend within the data set</gco:CharacterString></description>
+            </cat:CT_CodelistValue>
+         </cat:codeEntry>
+
+         <cat:codeEntry>
+            <cat:CT_CodelistValue id="S102_GriddingMethod_spline">
+               <cat:identifier>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">spline</gco:ScopedName>
+               </cat:identifier>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">spline</gco:ScopedName>
+               </cat:name>
+               <cat:definition>
+                  <gco:CharacterString>Spline</gco:CharacterString>
+               </cat:definition>
+               <description><gco:CharacterString>The Spline algorithm estimates nodal depths using a mathematical function to minimize overall surface curvature. The final "smoothed" surface passes exactly through the contributing input depth estimates</gco:CharacterString></description>
+            </cat:CT_CodelistValue>
+         </cat:codeEntry>
+
+         <cat:codeEntry>
+            <cat:CT_CodelistValue id="S102_GriddingMethod_kriging">
+               <cat:identifier>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">kriging</gco:ScopedName>
+               </cat:identifier>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S102_GriddingMethod">kriging</gco:ScopedName>
+               </cat:name>
+               <cat:definition>
+                  <gco:CharacterString>Kriging</gco:CharacterString>
+               </cat:definition>
+               <description><gco:CharacterString>Kriging is a geostatistical interpolation method that generates an estimated surface from a scattered set of points with a known depth</gco:CharacterString></description>
+            </cat:CT_CodelistValue>
+         </cat:codeEntry>
+         
+      </cat:CT_Codelist>
+   </cat:codelistItem>
+</CT_CodelistCatalogue>

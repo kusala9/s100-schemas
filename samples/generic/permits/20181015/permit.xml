@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<S100DE:permit xmlns:S100DE="http://www.iho.int/s100/de"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.iho.int/s100/de ../../../../schemas/S100/4.0.0/S100DE/20181015/S100DE.xsd">
+<header>
+    <date>20180607 14:11:59</date>
+    <dataserver>primar</dataserver>
+    <version>4.0.0</version>
+    <userpermit>AD1DAD797C966EC9F6A55B66ED98281599B3C7B1859868</userpermit>
+</header>
+<products>
+    <product id="S-101">
+        <permit>
+            <filename>101GB40079ABCDEF.000</filename>
+        	<edition>10</edition>       
+            <expiry>20181231</expiry>
+            <encryptedKey>2011AA840D5C22042011AA840D5C2204</encryptedKey>
+        </permit>
+        <permit>
+            <filename>101NO32802411223.001</filename>
+        	<edition>5</edition>
+            <expiry>20181006</expiry>
+            <encryptedKey>2065AF8E5D5C14112065AF8E5D5C1411</encryptedKey>
+        </permit>
+    </product>
+    <product id="S-102">
+    	<permit>
+    	    <filename>102NO329048208</filename>
+        	<edition>1</edition>
+    	    <expiry>20181231</expiry>
+    	    <encryptedKey>3176BD8F5D6C06083176BD8F5D6C0608</encryptedKey>
+        </permit>
+    </product>
+</products>
+<digitalSignatureValue>
+    <signedPublicKey id="primar" rootKey="IHO">MIIBtjCCASsGByqGSM44BAEwggEeAoGBA
+        MwvcLfFri7k1qxaTwztsWCgcYqOhNpKx7vIzstyiVM+xZlfgljKDToRQito0AIy9nkfXCOXA1Qz 
+        uUhMNoLim8s1oudLOeiDwjHq7fnm/HNQVLNKG9XFxOSChBz8AaknPTPnSRuTv1JiTKzH17CAGhk 
+        CFzqf7kK+AexqttT05skhAhUApHDc0AdnfLvcB6lQco/biZ7cv2UCgYBDWl36giFV2j4R2B7AxD 
+        mwwylcif7KiEeU9T+rrzQbQfIMCJeRLHVmNe0uO/L9YStBWNd+7vUIHQVzRNRmcODHlQTbojm8F 
+        SofNyOKc3LbQraAlMG/dcrDX7XafgFpdeCcyNyntD+7nd076zATYec5Ad4RJeo1Bq/UphJPYBSp 
+        NgOBhAACgYAIb5BNjP4YJOw/y7dcUS2k7aLt3YaWEM8sIyhOAGo4Z8bpzdDRkj5NYSYSzqKzHBT 
+        VRxPna4YKf7XvTQwflhWDDCo+yCuYirLFsmMJv5Mp8wL8+MXZNr4IA1k/xgTBCZfZPdbAaGpoQ4
+        nmgt0tQyJBxck+M2jUjGbQ2VCECIsNQQ==
+    </signedPublicKey>
+    <digitalSignature>302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</digitalSignature>
+</digitalSignatureValue>
+</S100DE:permit>

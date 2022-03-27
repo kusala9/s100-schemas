@@ -1,0 +1,149 @@
+<html xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl" xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0" xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0" xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><a name="top"></a><h1>Codelist Catalog</h1>
+   <p>This report describes an ISO TC211 or S-100 codelist catalog, the codelist(s) in the
+      catalog, and the values and definitions of the codes.
+   </p>
+   <p> Original stylesheet by Ted Habermann for ISO TC211 codelists.</p>
+   <p> Stylesheet adapted by Raphael Malyankar for the S-100 codelists.</p>
+   <h2>Catalog</h2><b>Name: </b>S-102 Metadata Codelists<br><b>Scope: </b>Codelists for S-102 metadata.<br><b>Field of application: </b>Codelists defined for use in S-102 metadata<br><b>Version: </b>1.0.0<br><b>Date: </b>2019-05-02<br><b>Number of CodeLists: </b>1<br><b>Number of items: </b>9
+   <hr>
+   <h2>Codelists</h2><a href="S102_Griddingmethod"></a><h2>
+      S102_GriddingMethod
+      : 
+   </h2><b>Definition: </b>
+   Gridding method
+   <br><b>CodeSpace: </b>http://www.iho.int/S102/2.0.0/md/1.0<br><b>Description: </b>
+   Algorithm used to calculate grid values
+   <br><b>Number of items: </b>9
+   <table width="95%" border="1" cellpadding="2" cellspacing="2">
+      <tr>
+         <th valign="top">Entry</th>
+         <th valign="top">Definition</th>
+         <th valign="top">Description</th>
+      </tr>
+      <tr>
+         <td valign="top">
+            basicWeightedMean
+            
+         </td>
+         <td valign="top">
+            Basic Weighted Mean
+            
+         </td>
+         <td valign="top">The Basic Weighted Mean algorithm computes an average depth for each grid node. Contributing
+            depth estimates within a given area of influence are weighted and averaged to compute
+            the final nodal value
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            shoalestDepth
+            
+         </td>
+         <td valign="top">
+            Shoalest Depth
+            
+         </td>
+         <td valign="top">The Shoalest Depth algorithm examines depth estimates within a specific area of influence
+            and assigns the shoalest value to the nodal position. The resulting surface represents
+            the shallowest depths across a given area
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            tpuWeightedMean
+            
+         </td>
+         <td valign="top">
+            TPU Weighted Mean
+            
+         </td>
+         <td valign="top">The Total Propagated Uncertainty (TPU) Weighted Mean algorithm makes use of the depth
+            and associated total propagated uncertainty for each contributing depth estimate to
+            compute a weighted average depth for each nodal position
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            cube
+            
+         </td>
+         <td valign="top">
+            Combined Uncertainty and Bathymetric Estimator (CUBE)
+            
+         </td>
+         <td valign="top">The Combined Uncertainty and Bathymetric Estimator, or CUBE makes use of the depth
+            and associated total propagated uncertainty for each contributing depth estimate to
+            compute one or many hypotheses for an area of interest. The resulting hypotheses are
+            used to estimate statistical representative depths at each nodal position
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            nearestNeighbour
+            
+         </td>
+         <td valign="top">
+            Nearest Neighbour
+            
+         </td>
+         <td valign="top">The Nearest Neighbour algorithm identifies the nearest depth value within an area
+            of interest and assigns that value to the nodal position. This method does not consider
+            values from neighbouring points
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            naturalNeighbour
+            
+         </td>
+         <td valign="top">
+            Natural Neighbour
+            
+         </td>
+         <td valign="top">Natural Neighbour interpolation identifies and weights a subset of input samples within
+            the area of interest to interpolate the final nodal value
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            polynomialTendency
+            
+         </td>
+         <td valign="top">
+            Polynomial Tendency
+            
+         </td>
+         <td valign="top">The Polynomial Tendency gridding method attempts to fit a polynomial trend, or best
+            fit surface to a set of input data points. This method can project trends into areas
+            with little to no data, but does not work well when there is no discernible trend
+            within the data set
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            spline
+            
+         </td>
+         <td valign="top">
+            Spline
+            
+         </td>
+         <td valign="top">The Spline algorithm estimates nodal depths using a mathematical function to minimize
+            overall surface curvature. The final "smoothed" surface passes exactly through the
+            contributing input depth estimates
+         </td>
+      </tr>
+      <tr>
+         <td valign="top">
+            kriging
+            
+         </td>
+         <td valign="top">
+            Kriging
+            
+         </td>
+         <td valign="top">Kriging is a geostatistical interpolation method that generates an estimated surface
+            from a scattered set of points with a known depth
+         </td>
+      </tr>
+   </table><a href="#top">top</a><hr><i>Stylesheet: CT_CodelistHTML.xsl Version: 2019-05-02</i></html>

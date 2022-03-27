@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:../../../schemas/S100/4.0.0/S100Catalog/20190422/S100_XC.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="file:../../../schemas/S111/1.0.0/XC/20190422/S111_XC.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<!-- Exchange set catalogue template -->
+<!-- Prepared by Raphael Malyankar -->
+<!-- Notes (June 11, 2018): (1) See the README file in the "schemas" container folder. (2) To reference other ISO 19115-3 schemas for
+        other metadata classes, add the appropriate ISO namespaces (see the ExchangeCatalog XSD file or the ISO namespace information
+        file in the folder 19115/resources/namespaceInformationAndTools).
+        schemaLocation must be customized according to the local installation
+-->
+<S100XC:S100_ExchangeCatalogue xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
+    xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+    xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
+    xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
+    xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
+    xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
+    xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
+    xmlns:S111XC="http://www.iho.int/s111/1.0/xc"
+    xmlns:S100XC="http://www.iho.int/s100/xc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.iho.int/s111/1.0/xc     ../../../schemas/S111/1.0.0/XC/20190422/S111_ExchangeCatalogue.xsd">
+    <S100XC:identifier>
+        <S100XC:identifier>abdc1234-1234-5678-abcd-123456abcdef</S100XC:identifier>
+        <S100XC:editionNumber>1.6</S100XC:editionNumber>
+        <S100XC:date>2018-10-16</S100XC:date>
+    </S100XC:identifier>
+    <S100XC:contact>
+        <S100XC:organization>IHO</S100XC:organization>
+    </S100XC:contact>
+    <S100XC:productSpecification>
+        <S100XC:name>S-111</S100XC:name>
+        <S100XC:version>1.0</S100XC:version>
+        <S100XC:date>2018-12-31</S100XC:date>
+        <S100XC:number>999</S100XC:number>
+    </S100XC:productSpecification>
+    <S100XC:metadataLanguage>English</S100XC:metadataLanguage>
+    <S100XC:exchangeCatalogueName>CATALOG.XML</S100XC:exchangeCatalogueName>
+    <S100XC:exchangeCatalogueDescription>Sample exchange catalogue for S-111.</S100XC:exchangeCatalogueDescription>
+    <S100XC:exchangeCatalogueComment>this is a hypothetical example to show the structure of the exchange catalogue.</S100XC:exchangeCatalogueComment>
+    <S100XC:compressionFlag>false</S100XC:compressionFlag>
+    <S100XC:sourceMedia>digital</S100XC:sourceMedia>
+    <S100XC:replacedData>false</S100XC:replacedData>
+    
+    <S100XC:datasetDiscoveryMetadata>
+        <S111XC:S111_DatasetDiscoveryMetadata>
+            <S100XC:fileName>111US00_20170101.0000_W076.N37_A1_ches_type1.hdf5</S100XC:fileName>
+            <S100XC:filePath/><!-- empty file path means the data file is located in the root folder (directory) of the exchange set -->
+            <S100XC:description>US East Coast Chesapeake Bay</S100XC:description>
+            <S100XC:dataProtection>0</S100XC:dataProtection>
+    
+            <S100XC:digitalSignatureReference>dsa</S100XC:digitalSignatureReference>
+            <S100XC:digitalSignatureValue>
+                <S100XC:signedPublicKey id="noaa" rootKey="IHO">MIIBtjCCASsGByqGSM44BAEwggEeAoGBAMwvcLfFri7k1qxaTwztsWCgcYqOhNpKx7vIzstyiVM+xZlfgljKDToRQito0AIy9nkfXCOXA1QzuUhMNoLim8s1oudLOeiDwjHq7fnm/HNQVLNKG9XFxOSChBz8AaknPTPnSRuTv1JiTKzH17CAGhkCFzqf7kK+AexqttT05skhAhUApHDc0AdnfLvcB6lQco/biZ7cv2UCgYBDWl36giFV2j4R2B7AxDmwwylcif7KiEeU9T+rrzQbQfIMCJeRLHVmNe0uO/L9YStBWNd+7vUIHQVzRNRmcODHlQTbojm8FSofNyOKc3LbQraAlMG/dcrDX7XafgFpdeCcyNyntD+7nd076zATYec5Ad4RJeo1Bq/UphJPYBSpNgOBhAACgYAIb5BNjP4YJOw/y7dcUS2k7aLt3YaWEM8sIyhOAGo4Z8bpzdDRkj5NYSYSzqKzHBTVRxPna4YKf7XvTQwflhWDDCo+yCuYirLFsmMJv5Mp8wL8+MXZNr4IA1k/xgTBCZfZPdbAaGpoQ4nmgt0tQyJBxck+M2jUjGbQ2VCECIsNQQ==</S100XC:signedPublicKey>
+                <S100XC:digitalSignature>302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</S100XC:digitalSignature>
+            </S100XC:digitalSignatureValue>
+    
+            <S100XC:classification gco:isoType="mco:MD_ClassificationCode"><mco:MD_ClassificationCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ClassificationCode" codeListValue="unclassified">unclassified</mco:MD_ClassificationCode></S100XC:classification>
+            <S100XC:purpose>new</S100XC:purpose>
+            <S100XC:specificUsage><mri:MD_Usage>
+                <mri:specificUsage><gco:CharacterString>general</gco:CharacterString></mri:specificUsage>
+            </mri:MD_Usage></S100XC:specificUsage>
+            <S100XC:editionNumber>1</S100XC:editionNumber>
+            <S100XC:issueDate>2018-04-15</S100XC:issueDate>
+            <S100XC:productSpecification>
+                <S100XC:name>S-111</S100XC:name>
+                <S100XC:version>1.0.0</S100XC:version>
+                <S100XC:date>2018-12-31</S100XC:date>
+                <S100XC:number>999</S100XC:number>
+            </S100XC:productSpecification>
+            <S100XC:producingAgency>
+                <cit:CI_Responsibility>
+                    <cit:role>
+                        <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="owner">owner</cit:CI_RoleCode>
+                    </cit:role>
+                    <cit:party>
+                        <cit:CI_Organisation>
+                            <cit:name> <gco:CharacterString>NOAA</gco:CharacterString> </cit:name>
+                        </cit:CI_Organisation>
+                    </cit:party>
+                </cit:CI_Responsibility>
+            </S100XC:producingAgency>
+            <S100XC:horizontalDatumReference>EPSG</S100XC:horizontalDatumReference>
+            <S100XC:horizontalDatumValue>4326</S100XC:horizontalDatumValue>
+            <S100XC:verticalDatum>meanLowWaterSprings</S100XC:verticalDatum>
+            <S100XC:dataType>HDF5</S100XC:dataType>
+            <S100XC:dataTypeVersion>1.0.0</S100XC:dataTypeVersion>
+            <S100XC:dataCoverage>
+                <S100XC:ID>1</S100XC:ID>
+                <S100XC:boundingBox gco:isoType="gmd:EX_GeographicBoundingBox">
+                    <gex:westBoundLongitude><gco:Decimal>55.0</gco:Decimal></gex:westBoundLongitude>
+                    <gex:eastBoundLongitude><gco:Decimal>71.0</gco:Decimal></gex:eastBoundLongitude>
+                    <gex:southBoundLatitude><gco:Decimal>-36.0</gco:Decimal></gex:southBoundLatitude>
+                    <gex:northBoundLatitude><gco:Decimal>-22.0</gco:Decimal></gex:northBoundLatitude>
+                </S100XC:boundingBox>
+                <S100XC:boundingPolygon>
+                    <gex:polygon gco:nilReason="inapplicable"/>
+                </S100XC:boundingPolygon>
+            </S100XC:dataCoverage>
+            
+            <S100XC:comment>Sample of S-111 metadata. Values do not match any actual dataset.</S100XC:comment>
+            <S100XC:defaultLocale>
+                <lan:PT_Locale>
+                    <lan:language>
+                        <lan:LanguageCode codeList="http://www.iho.int/S100/4.0.0/resources/Codelists/cat/codelists.xml#S100_MD_LanguageCode" codeListValue="eng">English</lan:LanguageCode>
+                    </lan:language>
+                    <lan:characterEncoding>
+                        <lan:MD_CharacterSetCode codeList="http://www.iho.int/S100/4.0.0/resources/Codelists/cat/codelists.xml#S100_MD_CharacterSetCode" codeListValue="UTF-8">UTF-8</lan:MD_CharacterSetCode>
+                    </lan:characterEncoding>
+                </lan:PT_Locale>
+            </S100XC:defaultLocale>
+            <S100XC:metadataFileIdentifier>abdc1234-1234-5678-abcd-123456abcdef.CATALOG</S100XC:metadataFileIdentifier>
+            <S100XC:metadataPointOfContact>
+                <cit:CI_Responsibility>
+                    <cit:role>
+                        <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="publisher">Publisher</cit:CI_RoleCode>
+                    </cit:role>
+                    <cit:party>
+                        <cit:CI_Organisation>
+                            <cit:name> <gco:CharacterString>NOAA</gco:CharacterString> </cit:name>
+                        </cit:CI_Organisation>
+                    </cit:party>
+                </cit:CI_Responsibility>
+            </S100XC:metadataPointOfContact>
+            <S100XC:metadataDateStamp>2018-11-05</S100XC:metadataDateStamp>
+            <S100XC:metadataLanguage>English</S100XC:metadataLanguage>
+
+            <!-- Provides the name of the ISO 19115 metadata file for the dataset in the src attribute -->
+            <S100XC:S100_19115DatasetMetadata>
+                <gcx:FileName src="MD_111US00_20170101.0000_W076.N37_A1_ches_type1.XML">Data quality report 20170101.0000_W076.N37_A1_ches_type1</gcx:FileName>
+            </S100XC:S100_19115DatasetMetadata>
+   
+            <S111XC:typeOfCurrentData>hydrodynamicModelForecast</S111XC:typeOfCurrentData>
+            <S111XC:dataCodingFormat>regularGrid</S111XC:dataCodingFormat>
+            <S111XC:methodCurrentsProduct>(unavailable)</S111XC:methodCurrentsProduct>
+            <S111XC:minDatasetCurrentSpeed>-1.0</S111XC:minDatasetCurrentSpeed>
+            <S111XC:maxDatasetCurrentSpeed>25.0</S111XC:maxDatasetCurrentSpeed>
+
+        </S111XC:S111_DatasetDiscoveryMetadata>
+
+        <!-- Exchange catalogue entry for the "metafeatures" file is TBD. A dataset discovery block as in S-101 should suffice. -->
+        <!-- <S100XC:S100_DatasetDiscoveryMetadata>...metafeatures file discovery metadata...</S100XC:S100_DatasetDiscoveryMetadata> -->
+
+    </S100XC:datasetDiscoveryMetadata>
+    
+    <S100XC:S100_CatalogueMetadata>
+        <S100XC:fileName>S111FC.xml</S100XC:fileName>
+        <S100XC:fileLocation>PATH_TO_FOLDER_CONTAINING_FC</S100XC:fileLocation>
+        <S100XC:scope>featureCatalogue</S100XC:scope>
+        <S100XC:versionNumber>1.0.0</S100XC:versionNumber>
+        <S100XC:issueDate>2018-12-31</S100XC:issueDate>
+        <S100XC:productSpecification>
+            <S100XC:name>S-111</S100XC:name>
+            <S100XC:version>1.0.0</S100XC:version>
+            <S100XC:date>2018-12-31</S100XC:date>
+            <S100XC:number>999</S100XC:number>
+        </S100XC:productSpecification>
+
+        <S100XC:digitalSignatureReference>dsa</S100XC:digitalSignatureReference>
+        <S100XC:digitalSignatureValue>
+            <S100XC:signedPublicKey id="noaa"/>
+            <S100XC:digitalSignature>302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</S100XC:digitalSignature>
+        </S100XC:digitalSignatureValue>
+   
+     <S100XC:defaultLocale>
+            <lan:PT_Locale>
+                <lan:language>
+                    <lan:LanguageCode codeList="http://www.iho.int/S100/4.0.0/resources/Codelists/cat/codelists.xml#S100_MD_LanguageCode" codeListValue="eng">English</lan:LanguageCode>
+                </lan:language>
+                <lan:characterEncoding>
+                    <lan:MD_CharacterSetCode codeList="http://www.iho.int/S100/4.0.0/resources/Codelists/cat/codelists.xml#S100_MD_CharacterSetCode" codeListValue="UTF-8">UTF-8</lan:MD_CharacterSetCode>
+                </lan:characterEncoding>
+            </lan:PT_Locale>
+        </S100XC:defaultLocale>
+    </S100XC:S100_CatalogueMetadata>
+    
+</S100XC:S100_ExchangeCatalogue>

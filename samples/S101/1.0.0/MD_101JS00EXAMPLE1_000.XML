@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- S100 adaptations of ISO schematron files mdb.sch and cit.sch -->
+<?xml-model href="file:../../../schemas/ephemera/iso/19115/-3/mdb/2.0/s100mdb.sch"?>
+<?xml-model href="file:../../../schemas/ephemera/iso/19115/-3/cit/2.0/s100cit.sch"?>
+<!--
+    Examples of ISO schematron files used directly. Note that the ISO .sch files do
+    not use "role" attributes and some Schematron processing environments may therefore
+    flag informative diagnostics as errors instead of information.
+-->
+<!--
+<?xml-model href="file:../../../schemas/standards.iso.org/19115/-3/gex/1.0/gex.sch"?>
+<?xml-model href="file:../../../schemas/standards.iso.org/19115/-3/mco/1.0/mco.sch"?>
+<?xml-model href="file:../../../schemas/standards.iso.org/19115/-3/mmi/1.0/mmi.sch"?>
+<?xml-model href="file:../../../schemas/standards.iso.org/19115/-3/mri/1.0/mri.sch"?>
+-->
+
+<!-- The rules file for checking the generic constraints added in S-100. -->
+<?xml-model href="file:../../../schemas/S100/4.0.0/S100Catalog/20190422/S100_DSMD.sch"?>
+<?xml-model href="file:../../../schemas/S100/4.0.0/S100Catalog/20190422/S100_DQ.sch"?>
+
+<!-- ISO metadata file example
+    Date: 10 May 2018 (Initial).
+    S-100 Version: S-100 4.0.0
+    Example Build No.: 20190331 (updated)
+    Note: (1) This file is an example of how to encode metadata and not a definitive statement of
+            what metadata should or should not be encoded.
+        (2) To enable the description of dataset aggregates, resources, metadata extensions, the
+            ISO classes DS_DataSet, DS_Initiative, DS_OtherAggregate, DS_Platform, DS_ProductionSeries,
+            DS_Sensor, DS_Series, or SV_Service, use the ISO 19115-3 mda.xsd schema. Note that the
+            namespace of the root element in this example is still "mdb" and that the root is MD_Metadata
+            since this example is metadata for a single dataset.
+        (3) Examples of the use of various Schematron rules files to validate ISO and S-100 constraints
+            are included near the head of this file.
+ -->
+<mdb:MD_Metadata
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
+    xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+    xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
+    xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0"
+    xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
+    xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
+    xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
+    xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
+    xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
+    xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
+    xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0"
+    xmlns:gmi="http://standards.iso.org/iso/19115/-2/gmi/1.0"
+    xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0"
+    xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0"
+    xmlns:md1="http://standards.iso.org/iso/19115/-3/md1/2.0"
+    xmlns:dqm="http://standards.iso.org/iso/19157/-2/dqm/1.0"
+    xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/md1/2.0 ../../../schemas/standards.iso.org/19115/-3/md1/2.0/md1.xsd" >
+
+    <mdb:metadataIdentifier>
+        <mcc:MD_Identifier>
+            <mcc:code> <gco:CharacterString>abdc1234-1234-5678-abcd-123456abcdef</gco:CharacterString> </mcc:code>
+        </mcc:MD_Identifier>
+    </mdb:metadataIdentifier>
+
+    <mdb:defaultLocale>
+        <lan:PT_Locale>
+            <lan:language> <lan:LanguageCode codeList="http://www.iho.int/S100/4.0.0/resources/Codelists/cat/codelists.xml#S100_MD_LanguageCode" codeListValue="eng">English</lan:LanguageCode> </lan:language>
+            <lan:characterEncoding>
+                <lan:MD_CharacterSetCode codeList="http://www.iho.int/S100/4.0.0/resources/Codelists/cat/codelists.xml#S100_MD_CharacterSetCode" codeListValue="UTF-8">UTF-8</lan:MD_CharacterSetCode>
+            </lan:characterEncoding>
+        </lan:PT_Locale>
+    </mdb:defaultLocale>
+    
+    <mdb:contact>
+        <cit:CI_Responsibility>
+            <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="owner">Owner</cit:CI_RoleCode>
+            </cit:role>
+            <cit:party>
+                <cit:CI_Organisation>
+                    <cit:name> <gco:CharacterString>Jussland HO</gco:CharacterString> </cit:name>
+                    
+                </cit:CI_Organisation>
+            </cit:party>
+        </cit:CI_Responsibility>
+    </mdb:contact>
+
+    <mdb:dateInfo>
+        <cit:CI_Date>
+            <cit:date><gco:DateTime>2018-04-15T00:00:00</gco:DateTime></cit:date>
+            <cit:dateType>
+                <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_DateTypeCode" codeListValue="creation"/>
+            </cit:dateType>
+        </cit:CI_Date>
+    </mdb:dateInfo>
+
+    <mdb:metadataStandard>
+        <cit:CI_Citation>
+            <cit:title> <gco:CharacterString>ISO 19115-1</gco:CharacterString> </cit:title>
+            <cit:edition> <gco:CharacterString>2014</gco:CharacterString> </cit:edition>
+            <cit:otherCitationDetails> <gco:CharacterString>Amendment 01 (2018)</gco:CharacterString> </cit:otherCitationDetails>
+        </cit:CI_Citation>
+    </mdb:metadataStandard>
+
+    <mdb:metadataStandard>
+        <cit:CI_Citation>
+            <cit:title><gco:CharacterString>ISO 19115-3</gco:CharacterString></cit:title>
+            <cit:edition><gco:CharacterString>2016</gco:CharacterString></cit:edition>
+        </cit:CI_Citation>
+    </mdb:metadataStandard>
+
+    <mdb:identificationInfo>
+        <mri:MD_DataIdentification>
+            <mri:citation>
+                <cit:CI_Citation>
+                    <cit:title><gco:CharacterString>Micklefirth Approaches</gco:CharacterString></cit:title>
+                    <cit:editionDate><gco:DateTime>2018-04-15T00:00:00</gco:DateTime></cit:editionDate>
+                </cit:CI_Citation>
+            </mri:citation>
+            <mri:abstract>
+                <gco:CharacterString>This is a sample dataset, etc., etc.</gco:CharacterString>
+            </mri:abstract>
+            <mri:purpose> <gco:CharacterString>New edition</gco:CharacterString> </mri:purpose>
+            <mri:pointOfContact>
+                <cit:CI_Responsibility>
+                    <cit:role>
+                        <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="originator"/>
+                    </cit:role>
+                    <cit:party>
+                        <cit:CI_Organisation>
+                            <cit:name><gco:CharacterString>Jussland Hydrographic Office</gco:CharacterString></cit:name>
+                            <cit:contactInfo>
+                                <cit:CI_Contact>
+                                    <cit:onlineResource>
+                                        <cit:CI_OnlineResource>
+                                            <cit:linkage> <gco:CharacterString>www.hydro.js</gco:CharacterString> </cit:linkage>
+                                        </cit:CI_OnlineResource>
+                                    </cit:onlineResource>
+                                </cit:CI_Contact>
+                            </cit:contactInfo>
+                        </cit:CI_Organisation>
+                    </cit:party>
+                </cit:CI_Responsibility>
+            </mri:pointOfContact>
+            
+            <mri:spatialRepresentationType>
+                <mcc:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="vector"/>
+            </mri:spatialRepresentationType>
+
+            <mri:topicCategory>
+                <mri:MD_TopicCategoryCode>transportation</mri:MD_TopicCategoryCode>
+            </mri:topicCategory>
+
+            <mri:extent>
+                <gex:EX_Extent>
+                    <gex:geographicElement>
+                        <gex:EX_GeographicBoundingBox>
+                            <gex:westBoundLongitude> <gco:Decimal>55.0</gco:Decimal> </gex:westBoundLongitude>
+                            <gex:eastBoundLongitude> <gco:Decimal>71.0</gco:Decimal> </gex:eastBoundLongitude>
+                            <gex:southBoundLatitude> <gco:Decimal>-36.0</gco:Decimal> </gex:southBoundLatitude>
+                            <gex:northBoundLatitude> <gco:Decimal>-22.0</gco:Decimal> </gex:northBoundLatitude>
+                        </gex:EX_GeographicBoundingBox>
+                    </gex:geographicElement>
+                </gex:EX_Extent>
+            </mri:extent>
+
+            <mri:resourceSpecificUsage>
+                <mri:MD_Usage>
+                    <mri:specificUsage><gco:CharacterString>Navigation between high seas and pilot stations. Not intended for port entry.</gco:CharacterString></mri:specificUsage>
+                </mri:MD_Usage>
+            </mri:resourceSpecificUsage>
+
+            <mri:defaultLocale><lan:PT_Locale>
+                <lan:language><lan:LanguageCode codeList="http://www.iho.int/S100/4.0.0/resources/Codelists/cat/codelists.xml#S100_MD_LanguageCode" codeListValue="eng">English</lan:LanguageCode></lan:language>
+                <lan:characterEncoding><lan:MD_CharacterSetCode codeList="http://www.iho.int/S100/4.0.0/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="UTF-8"/></lan:characterEncoding>
+            </lan:PT_Locale></mri:defaultLocale>
+            
+            <mri:supplementalInformation>
+                <gco:CharacterString>Supplemental information about the dataset.</gco:CharacterString>
+            </mri:supplementalInformation>
+        </mri:MD_DataIdentification>
+
+    </mdb:identificationInfo>
+
+    <!-- The following is an example. Conventions for data quality measure names, references, etc., are TBD as of March 2019. -->
+    <mdb:dataQualityInfo>
+        <mdq:DQ_DataQuality>
+            <mdq:scope>
+                <mcc:MD_Scope>
+                    <mcc:level><mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="dataset">information applies to the dataset</mcc:MD_ScopeCode></mcc:level>
+                </mcc:MD_Scope>
+            </mdq:scope>
+
+            <!-- Examples of reports for the DQ elements mentioned in the ISO schemas and referenced in S-97 Part C follow.
+                After conventions are defined, the code and codespace should be the only identification information that
+                is required to be provided in this file, the rest being determined by the conventions. 
+            -->
+            <mdq:report>
+                <mdq:DQ_CompletenessCommission id="MD_101JS00EXAMPLE1_DQREP.1">
+                    <mdq:measure>
+                        <mdq:DQ_MeasureReference>
+                            <mdq:measureIdentification>
+                                <mcc:MD_Identifier>
+                                    <mcc:authority>
+                                        <cit:CI_Citation>
+                                            <cit:title><gco:CharacterString>S-97 Part C</gco:CharacterString></cit:title>
+                                            <cit:edition><gco:CharacterString>1.0.0</gco:CharacterString></cit:edition>
+                                        </cit:CI_Citation>
+                                    </mcc:authority>
+                                    <mcc:code><gco:CharacterString>numberOfExcessItems</gco:CharacterString></mcc:code>
+                                    <mcc:codeSpace><gco:CharacterString>S97:dqm</gco:CharacterString></mcc:codeSpace>
+                                </mcc:MD_Identifier>
+                            </mdq:measureIdentification>
+                            <mdq:nameOfMeasure><gco:CharacterString>Completeness / Commission / numberOfExcessItems</gco:CharacterString></mdq:nameOfMeasure>
+                        </mdq:DQ_MeasureReference>
+                    </mdq:measure>
+                    <mdq:evaluationMethod>
+                        <mdq:DQ_FullInspection>
+                            <mdq:evaluationMethodType>
+                                <mdq:DQ_EvaluationMethodTypeCode codeList="http://standards.iso.org/iso/19157/resources/Codelists/cat/codelists.xml#DQ_EvaluationMethodTypeCode" codeListValue="directInternal">direct internal</mdq:DQ_EvaluationMethodTypeCode>
+                            </mdq:evaluationMethodType>
+                        </mdq:DQ_FullInspection>
+                    </mdq:evaluationMethod>
+                    <mdq:result>
+                        <mdq:DQ_QuantitativeResult>
+                            <mdq:value><gco:Record><gco:Integer>0</gco:Integer></gco:Record></mdq:value>
+                        </mdq:DQ_QuantitativeResult>
+                    </mdq:result>
+                </mdq:DQ_CompletenessCommission>
+            </mdq:report>
+
+            <mdq:report>
+                <mdq:DQ_CompletenessCommission id="MD_101JS00EXAMPLE1_DQREP.2">
+                        <mdq:measure>
+                            <mdq:DQ_MeasureReference>
+                                <mdq:measureIdentification>
+                                    <mcc:MD_Identifier>
+                                        <mcc:authority>
+                                            <cit:CI_Citation>
+                                                <cit:title><gco:CharacterString>S-97 Part C</gco:CharacterString></cit:title>
+                                                <cit:edition><gco:CharacterString>1.0.0</gco:CharacterString></cit:edition>
+                                            </cit:CI_Citation>
+                                        </mcc:authority>
+                                        <mcc:code><gco:CharacterString>numberOfDuplicateFeatureInstances</gco:CharacterString></mcc:code>
+                                        <mcc:codeSpace><gco:CharacterString>S97:dqm</gco:CharacterString></mcc:codeSpace>
+                                    </mcc:MD_Identifier>
+                                </mdq:measureIdentification>
+                                <mdq:nameOfMeasure><gco:CharacterString>Completeness / Commission / numberOfDuplicateFeatureInstances</gco:CharacterString></mdq:nameOfMeasure>
+                            </mdq:DQ_MeasureReference>
+                        </mdq:measure>
+                    <mdq:evaluationMethod>
+                        <mdq:DQ_FullInspection>
+                            <mdq:evaluationMethodType>
+                                <mdq:DQ_EvaluationMethodTypeCode codeList="http://standards.iso.org/iso/19157/resources/Codelists/cat/codelists.xml#DQ_EvaluationMethodTypeCode" codeListValue="directInternal">direct internal</mdq:DQ_EvaluationMethodTypeCode>
+                            </mdq:evaluationMethodType>
+                        </mdq:DQ_FullInspection>
+                    </mdq:evaluationMethod>
+                        <mdq:result>
+                            <mdq:DQ_QuantitativeResult>
+                                <mdq:value><gco:Record><gco:Integer>0</gco:Integer></gco:Record></mdq:value>
+                            </mdq:DQ_QuantitativeResult>
+                        </mdq:result>
+                </mdq:DQ_CompletenessCommission>
+            </mdq:report>
+
+            <!-- other data quality measures from S-97 Part C... -->
+
+            <!-- Aggregation measures from S-97 Part C follow -->
+            <mdq:report>
+                <mdq:DQ_UsabilityElement id="MD_101JS00EXAMPLE1_DQREP.19">
+                    <mdq:measure>
+                        <mdq:DQ_MeasureReference>
+                            <mdq:measureIdentification>
+                                <mcc:MD_Identifier>
+                                    <mcc:authority>
+                                        <cit:CI_Citation>
+                                            <cit:title><gco:CharacterString>S-97 Part C</gco:CharacterString></cit:title>
+                                            <cit:edition><gco:CharacterString>1.0.0</gco:CharacterString></cit:edition>
+                                        </cit:CI_Citation>
+                                    </mcc:authority>
+                                    <mcc:code><gco:CharacterString>DataProductSpecificationPassed</gco:CharacterString></mcc:code>
+                                    <mcc:codeSpace><gco:CharacterString>S97:dqm</gco:CharacterString></mcc:codeSpace>
+                                </mcc:MD_Identifier>
+                            </mdq:measureIdentification>
+                            <mdq:nameOfMeasure><gco:CharacterString>Aggregation Measures / AggregationMeasures / DataProductSpecificationPassed</gco:CharacterString></mdq:nameOfMeasure>
+                        </mdq:DQ_MeasureReference>
+                    </mdq:measure>
+                    <mdq:evaluationMethod>
+                        <mdq:DQ_FullInspection>
+                            <mdq:evaluationMethodType>
+                                <mdq:DQ_EvaluationMethodTypeCode codeList="http://standards.iso.org/iso/19157/resources/Codelists/cat/codelists.xml#DQ_EvaluationMethodTypeCode" codeListValue="directInternal">direct internal</mdq:DQ_EvaluationMethodTypeCode>
+                            </mdq:evaluationMethodType>
+                        </mdq:DQ_FullInspection>
+                    </mdq:evaluationMethod>
+                    <mdq:result>
+                        <mdq:DQ_ConformanceResult>
+                            <mdq:specification>
+                                <cit:CI_Citation>
+                                    <cit:title><gco:CharacterString>S-101 Validation Tests</gco:CharacterString></cit:title>
+                                    <cit:edition><gco:CharacterString>1.0.0</gco:CharacterString></cit:edition>
+                                </cit:CI_Citation>
+                            </mdq:specification>
+                            <mdq:pass><gco:Boolean>true</gco:Boolean></mdq:pass>
+                        </mdq:DQ_ConformanceResult>
+                    </mdq:result>
+                </mdq:DQ_UsabilityElement>
+            </mdq:report>
+
+            <mdq:report>
+                <mdq:DQ_UsabilityElement  id="MD_101JS00EXAMPLE1_DQREP.20">
+                    <mdq:measure>
+                        <mdq:DQ_MeasureReference>
+                            <mdq:measureIdentification>
+                                <mcc:MD_Identifier>
+                                    <mcc:authority>
+                                        <cit:CI_Citation>
+                                            <cit:title><gco:CharacterString>S-97 Part C</gco:CharacterString></cit:title>
+                                            <cit:edition><gco:CharacterString>1.0.0</gco:CharacterString></cit:edition>
+                                        </cit:CI_Citation>
+                                    </mcc:authority>
+                                    <mcc:code><gco:CharacterString>DataProductSpecificationFailRate</gco:CharacterString></mcc:code>
+                                    <mcc:codeSpace><gco:CharacterString>S97:dqm</gco:CharacterString></mcc:codeSpace>
+                                </mcc:MD_Identifier>
+                            </mdq:measureIdentification>
+                            <mdq:nameOfMeasure><gco:CharacterString>Aggregation Measures / AggregationMeasures / DataProductSpecificationFailRate</gco:CharacterString></mdq:nameOfMeasure>
+                        </mdq:DQ_MeasureReference>
+                    </mdq:measure>
+                    <mdq:evaluationMethod>
+                        <mdq:DQ_FullInspection>
+                            <mdq:evaluationMethodType>
+                                <mdq:DQ_EvaluationMethodTypeCode codeList="http://standards.iso.org/iso/19157/resources/Codelists/cat/codelists.xml#DQ_EvaluationMethodTypeCode" codeListValue="directInternal">direct internal</mdq:DQ_EvaluationMethodTypeCode>
+                            </mdq:evaluationMethodType>
+                        </mdq:DQ_FullInspection>
+                    </mdq:evaluationMethod>
+                    <mdq:result>
+                        <mdq:DQ_QuantitativeResult>
+                            <mdq:value><gco:Record><gco:Real>0.0</gco:Real></gco:Record></mdq:value>
+                        </mdq:DQ_QuantitativeResult>
+                    </mdq:result>
+                </mdq:DQ_UsabilityElement>
+            </mdq:report>
+            
+        </mdq:DQ_DataQuality>
+    </mdb:dataQualityInfo>
+
+    <mdb:metadataConstraints>
+        <mco:MD_SecurityConstraints>
+            <mco:classification>
+                <mco:MD_ClassificationCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ClassificationCode" codeListValue="unclassified">available for general disclosure</mco:MD_ClassificationCode>
+            </mco:classification>
+        </mco:MD_SecurityConstraints>
+    </mdb:metadataConstraints>
+    
+    <mdb:applicationSchemaInfo>
+        <mas:MD_ApplicationSchemaInformation>
+            <mas:name>
+                <cit:CI_Citation>
+                    <cit:title>
+                        <gco:CharacterString>S-101 Product Specification</gco:CharacterString>
+                    </cit:title>
+                    <cit:date>
+                        <cit:CI_Date>
+                            <cit:date> <gco:DateTime>2018-12-31T00:00:00</gco:DateTime> </cit:date>
+                            <cit:dateType>
+                                <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_DateTypeCode" codeListValue="publication"/>
+                            </cit:dateType>
+                        </cit:CI_Date>
+                    </cit:date>
+                </cit:CI_Citation>
+            </mas:name>
+            <mas:schemaLanguage>
+                <gco:CharacterString>UML</gco:CharacterString>
+            </mas:schemaLanguage>
+            <mas:constraintLanguage gco:nilReason="inapplicable"/>
+        </mas:MD_ApplicationSchemaInformation>
+    </mdb:applicationSchemaInfo>
+    
+    <mdb:metadataMaintenance>
+        <mmi:MD_MaintenanceInformation>
+            <mmi:maintenanceAndUpdateFrequency>
+                <mmi:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded">resource is updated as deemed necessary</mmi:MD_MaintenanceFrequencyCode>
+            </mmi:maintenanceAndUpdateFrequency>
+        </mmi:MD_MaintenanceInformation>
+    </mdb:metadataMaintenance>
+
+</mdb:MD_Metadata>

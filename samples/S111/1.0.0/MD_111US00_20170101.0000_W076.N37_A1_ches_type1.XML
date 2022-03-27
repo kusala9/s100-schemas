@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- S100 adaptations of ISO schematron files mdb.sch and cit.sch -->
+<!--
+<?xml-model href="file:../../../schemas/ephemera/iso/19115/-3/mdb/2.0/s100mdb.sch"?>
+<?xml-model href="file:../../../schemas/ephemera/iso/19115/-3/cit/2.0/s100cit.sch"?>
+-->
+<!--
+    Examples of ISO schematron files used directly. Note that the ISO .sch files do
+    not use "role" attributes and some Schematron processing environments may therefore
+    flag informative diagnostics as errors instead of information.
+-->
+<!--
+<?xml-model href="file:../../../schemas/standards.iso.org/19115/-3/gex/1.0/gex.sch"?>
+<?xml-model href="file:../../../schemas/standards.iso.org/19115/-3/mco/1.0/mco.sch"?>
+<?xml-model href="file:../../../schemas/standards.iso.org/19115/-3/mmi/1.0/mmi.sch"?>
+<?xml-model href="file:../../../schemas/standards.iso.org/19115/-3/mri/1.0/mri.sch"?>
+-->
+
+<!-- The rules file for checking the generic constraints added in S-100. -->
+<?xml-model href="file:../../../schemas/S100/4.0.0/S100Catalog/20190422/S100_DQ.sch"?>
+
+<!-- ISO Schematron files below. The current ISO files do not use role flags, which may
+    cause validators to tag even the informative diagnostics as errors instead of
+    informative messages.
+-->
+<!--
+<?xml-model href="file:../../../schemas/standards.iso.org/19157/-2/mdq/1.0/mdq.sch"?>
+<?xml-model href="file:../../../schemas/standards.iso.org/19157/-2/dqm/1.0/dqm.sch"?>
+-->
+
+<!-- Example of data quality report for S-111 data. Note that data quality reporting
+    conventions are still TBD. This file can be expanded to include other ISO metadata
+    too (see the S-101 samples.)
+ -->
+<mdb:MD_Metadata
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
+    xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+    xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
+    xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0"
+    xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
+    xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0"
+    xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/2.0"
+    xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
+    xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
+    xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
+    xmlns:dqm="http://standards.iso.org/iso/19157/-2/dqm/1.0"
+    xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/mds/2.0 file:../../../schemas/standards.iso.org/19115/-3/mds/2.0/mds.xsd" >
+
+    <!-- "separate" data quality reports are indicated by MD_Metadata.metadataIdentifier.MD_Identifier.description = "qualityReport"
+        Need to make this (or an equivalent substitute to identify "separate" DQ reports) an S-100 convention.
+     -->
+    <mdb:metadataIdentifier>
+        <mcc:MD_Identifier>
+            <mcc:code> <gco:CharacterString>abdc1234-1234-5678-abcd-765432fdacad</gco:CharacterString> </mcc:code>
+            <mcc:description><gco:CharacterString>dataQuality</gco:CharacterString></mcc:description>
+        </mcc:MD_Identifier>
+    </mdb:metadataIdentifier>
+
+    <mdb:defaultLocale>
+        <lan:PT_Locale>
+            <lan:language> <lan:LanguageCode codeList="http://www.iho.int/S100/4.0.0/resources/Codelists/cat/codelists.xml#S100_MD_LanguageCode" codeListValue="eng">English</lan:LanguageCode> </lan:language>
+            <lan:characterEncoding>
+                <lan:MD_CharacterSetCode codeList="http://www.iho.int/S100/4.0.0/resources/Codelists/cat/codelists.xml#S100_MD_CharacterSetCode" codeListValue="UTF-8">UTF-8</lan:MD_CharacterSetCode>
+            </lan:characterEncoding>
+        </lan:PT_Locale>
+    </mdb:defaultLocale>
+    
+    <mdb:contact>
+        <cit:CI_Responsibility>
+            <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="originator">Originator</cit:CI_RoleCode>
+            </cit:role>
+            <cit:party>
+                <cit:CI_Organisation>
+                    <cit:name> <gco:CharacterString>NOAA</gco:CharacterString> </cit:name>
+                </cit:CI_Organisation>
+            </cit:party>
+        </cit:CI_Responsibility>
+    </mdb:contact>
+
+    <mdb:dateInfo>
+        <cit:CI_Date>
+            <cit:date><gco:DateTime>2018-04-15T00:00:00</gco:DateTime></cit:date>
+            <cit:dateType>
+                <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_DateTypeCode" codeListValue="creation"/>
+            </cit:dateType>
+        </cit:CI_Date>
+    </mdb:dateInfo>
+
+    <mdb:metadataStandard>
+        <cit:CI_Citation>
+            <cit:title> <gco:CharacterString>ISO 19157: Geographic information -- Data quality</gco:CharacterString> </cit:title>
+            <cit:otherCitationDetails><gco:CharacterString>Data quality measures and elements on which this report is based.</gco:CharacterString></cit:otherCitationDetails>
+        </cit:CI_Citation>
+    </mdb:metadataStandard>
+
+    <mdb:metadataStandard>
+        <cit:CI_Citation>
+            <cit:title> <gco:CharacterString>ISO 19157-2: Geographic information -- Data quality -- Part 2: XML schema implementation</gco:CharacterString> </cit:title>
+            <cit:otherCitationDetails><gco:CharacterString>Format of data quality results reporting elements in this file.</gco:CharacterString></cit:otherCitationDetails>
+        </cit:CI_Citation>
+    </mdb:metadataStandard>
+
+    <mdb:metadataStandard>
+        <cit:CI_Citation>
+            <cit:title><gco:CharacterString>ISO 19115-3</gco:CharacterString></cit:title>
+            <cit:otherCitationDetails><gco:CharacterString>Basic format of this report file.</gco:CharacterString></cit:otherCitationDetails>
+        </cit:CI_Citation>
+    </mdb:metadataStandard>
+
+    <mdb:identificationInfo>
+        <mri:MD_DataIdentification>
+            <mri:citation>
+                <cit:CI_Citation>
+                    <cit:title><gco:CharacterString>Quality results - 111US00_20170101.0000_W076.N37_A1_ches_type1</gco:CharacterString></cit:title>
+                </cit:CI_Citation>
+            </mri:citation>
+            <mri:abstract>
+                <gco:CharacterString>Quality report.</gco:CharacterString>
+            </mri:abstract>
+            <mri:associatedResource>
+                <mri:MD_AssociatedResource>
+                    <mri:name>
+                        <cit:CI_Citation>
+                            <cit:title><gcx:FileName src="111US00_20170101.0000_W076.N37_A1_ches_type1.hdf5">US East Coast Chesapeake Bay 20170101.0000</gcx:FileName></cit:title>
+                        </cit:CI_Citation>
+                    </mri:name>
+                    <mri:associationType>
+                        <mri:DS_AssociationTypeCode codeList="http://standards.iso.org/iso/19115/-3/mri/1.0" codeListValue="crossReference"/>
+                    </mri:associationType>
+                </mri:MD_AssociatedResource>
+            </mri:associatedResource>
+        </mri:MD_DataIdentification>
+
+    </mdb:identificationInfo>
+
+    <!-- The following is an example. Conventions for data quality measure names, references, etc., are TBD as of March 2019. -->
+    <mdb:dataQualityInfo>
+        <mdq:DQ_DataQuality>
+            <mdq:scope>
+                <mcc:MD_Scope>
+                    <mcc:level><mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="dataset">information applies to the dataset</mcc:MD_ScopeCode></mcc:level>
+                </mcc:MD_Scope>
+            </mdq:scope>
+
+            <!-- This sample contains only the aggregate results mandated in S-97 Part C 1.0.0. Other data quality results
+                can be added. 
+            -->
+
+            <mdq:report>
+                <mdq:DQ_UsabilityElement id="DQ.111US00_20170101.0000_W076.N37_A1_ches_type1_DQREP.19">
+                    <mdq:measure>
+                        <mdq:DQ_MeasureReference>
+                            <mdq:measureIdentification>
+                                <mcc:MD_Identifier>
+                                    <mcc:authority>
+                                        <cit:CI_Citation>
+                                            <cit:title><gco:CharacterString>S-97 Part C</gco:CharacterString></cit:title>
+                                            <cit:edition><gco:CharacterString>1.0.0</gco:CharacterString></cit:edition>
+                                        </cit:CI_Citation>
+                                    </mcc:authority>
+                                    <mcc:code><gco:CharacterString>DataProductSpecificationPassed</gco:CharacterString></mcc:code>
+                                    <mcc:codeSpace><gco:CharacterString>S97:dqm</gco:CharacterString></mcc:codeSpace>
+                                </mcc:MD_Identifier>
+                            </mdq:measureIdentification>
+                            <mdq:nameOfMeasure><gco:CharacterString>Aggregation Measures / AggregationMeasures / DataProductSpecificationPassed</gco:CharacterString></mdq:nameOfMeasure>
+                        </mdq:DQ_MeasureReference>
+                    </mdq:measure>
+                    <mdq:evaluationMethod>
+                        <mdq:DQ_FullInspection>
+                            <mdq:evaluationMethodType>
+                                <mdq:DQ_EvaluationMethodTypeCode codeList="http://standards.iso.org/iso/19157/resources/Codelists/cat/codelists.xml#DQ_EvaluationMethodTypeCode" codeListValue="directInternal">direct internal</mdq:DQ_EvaluationMethodTypeCode>
+                            </mdq:evaluationMethodType>
+                        </mdq:DQ_FullInspection>
+                    </mdq:evaluationMethod>
+                    <mdq:result>
+                        <mdq:DQ_ConformanceResult>
+                            <mdq:specification>
+                                <cit:CI_Citation>
+                                    <cit:title><gco:CharacterString>S-111 Validation Tests</gco:CharacterString></cit:title>
+                                    <cit:edition><gco:CharacterString>1.0.0</gco:CharacterString></cit:edition>
+                                </cit:CI_Citation>
+                            </mdq:specification>
+                            <mdq:pass><gco:Boolean>true</gco:Boolean></mdq:pass>
+                        </mdq:DQ_ConformanceResult>
+                    </mdq:result>
+                </mdq:DQ_UsabilityElement>
+            </mdq:report>
+
+            <mdq:report>
+                <mdq:DQ_UsabilityElement  id="DQ.111US00_20170101.0000_W076.N37_A1_ches_type1_DQREP.20">
+                    <mdq:measure>
+                        <mdq:DQ_MeasureReference>
+                            <mdq:measureIdentification>
+                                <mcc:MD_Identifier>
+                                    <mcc:authority>
+                                        <cit:CI_Citation>
+                                            <cit:title><gco:CharacterString>S-97 Part C</gco:CharacterString></cit:title>
+                                            <cit:edition><gco:CharacterString>1.0.0</gco:CharacterString></cit:edition>
+                                        </cit:CI_Citation>
+                                    </mcc:authority>
+                                    <mcc:code><gco:CharacterString>DataProductSpecificationFailRate</gco:CharacterString></mcc:code>
+                                    <mcc:codeSpace><gco:CharacterString>S97:dqm</gco:CharacterString></mcc:codeSpace>
+                                </mcc:MD_Identifier>
+                            </mdq:measureIdentification>
+                            <mdq:nameOfMeasure><gco:CharacterString>Aggregation Measures / AggregationMeasures / DataProductSpecificationFailRate</gco:CharacterString></mdq:nameOfMeasure>
+                        </mdq:DQ_MeasureReference>
+                    </mdq:measure>
+                    <mdq:evaluationMethod>
+                        <mdq:DQ_FullInspection>
+                            <mdq:evaluationMethodType>
+                                <mdq:DQ_EvaluationMethodTypeCode codeList="http://standards.iso.org/iso/19157/resources/Codelists/cat/codelists.xml#DQ_EvaluationMethodTypeCode" codeListValue="directInternal">direct internal</mdq:DQ_EvaluationMethodTypeCode>
+                            </mdq:evaluationMethodType>
+                        </mdq:DQ_FullInspection>
+                    </mdq:evaluationMethod>
+                    <mdq:result>
+                        <mdq:DQ_QuantitativeResult>
+                            <mdq:value><gco:Record><gco:Real>0.0</gco:Real></gco:Record></mdq:value>
+                        </mdq:DQ_QuantitativeResult>
+                    </mdq:result>
+                </mdq:DQ_UsabilityElement>
+            </mdq:report>
+
+        </mdq:DQ_DataQuality>
+    </mdb:dataQualityInfo>
+
+</mdb:MD_Metadata>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://www.iho.int/s102/2.0/xc" targetNamespace="http://www.iho.int/s102/2.0/xc" elementFormDefault="qualified" attributeFormDefault="unqualified"
+	xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0"
+	xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+	xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0"
+	xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0"
+	xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
+	xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0"
+	xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:S100XC="http://www.iho.int/s100/xc"
+	version="Draft-1.0.0-20190422">
+	<!-- ============================================================================================= -->
+	<!-- XML Schema for S-102 Edition 2.0.0 exchange set catalogues. 								   -->
+	<!-- ============================================================================================= -->
+
+	<!--
+	© Copyright 2018 
+	Prepared under contract for NOAA (Original)
+	
+	License
+	Certain parts of this document refer to or are based on the standards, documents, schemas, or other material
+	of the International Organization for Standardization (ISO), Open Geospatial Consortium (OGC), International
+	Hydrographic Organization / Organisation Hydrographique Internationale (IHO/OHI).
+	The ISO material can be obtained from any ISO member and from the Web site of the ISO Central Secretariat
+	at www.iso.org.
+	The OGC material can be obtained from the OGC Web site at www.opengeospatial.org.
+	The IHO material can be obtained from the IHO Web site at www.iho.int or from the International Hydrographic
+	Bureau.
+	
+	Permission to copy and distribute this document is hereby granted provided that this notice is retained
+	on all copies, and that IHO, NOAA are credited when the material is redistributed or used in
+	part or whole in derivative works.
+	Redistributions in binary form must reproduce this notice in the documentation and/or other materials
+	provided with the distribution.
+	
+	Disclaimer
+	This work is provided by the copyright holders and contributors "as is" and any express or implied warranties,
+	including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose
+	are disclaimed. In no event shall the copyright owner or contributors be liable for any direct, indirect,
+	incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute
+	goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of
+	liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way
+	out of the use of this software, even if advised of the possibility of such damage.
+	
+	Document history
+	Draft Version 2.0.0	20190422	Raphael Malyankar (Portolan Sciences LLC) for NOAA. (No version 1.0.0.)
+
+	-->
+<!--
+	Note that since the S-102 extends the S-100 generic schemas for exchange catalogues to add discovery metadata
+	elements, the namespace for the dataset discovery element is different from the S-100 exchange catalogue namespace.
+-->
+	<!-- Imports - update as necessary when the exchange catalogue is updated -->
+	<!-- Imports from local file -->
+	<xs:import namespace="http://www.iho.int/s100/xc" schemaLocation="../../../../S100/4.0.0/S100Catalog/20190422/S100_ExchangeCatalogue.xsd"/>
+
+	<xs:import namespace="http://standards.iso.org/iso/19115/-3/cit/2.0" schemaLocation="../../../../standards.iso.org/19115/-3/cit/2.0/cit.xsd"/>
+	<xs:import namespace="http://standards.iso.org/iso/19115/-3/gco/1.0" schemaLocation="../../../../standards.iso.org/19115/-3/gco/1.0/gco.xsd"/>
+	<xs:import namespace="http://standards.iso.org/iso/19115/-3/gcx/1.0" schemaLocation="../../../../standards.iso.org/19115/-3/gcx/1.0/gcx.xsd"/>
+	<xs:import namespace="http://standards.iso.org/iso/19115/-3/gex/1.0" schemaLocation="../../../../standards.iso.org/19115/-3/gex/1.0/gex.xsd"/>
+	<xs:import namespace="http://standards.iso.org/iso/19115/-3/lan/1.0" schemaLocation="../../../../standards.iso.org/19115/-3/lan/1.0/lan.xsd"/>
+	<xs:import namespace="http://standards.iso.org/iso/19115/-3/mco/1.0" schemaLocation="../../../../standards.iso.org/19115/-3/mco/1.0/mco.xsd"/>
+	<xs:import namespace="http://standards.iso.org/iso/19115/-3/mri/1.0" schemaLocation="../../../../standards.iso.org/19115/-3/mri/1.0/mri.xsd"/>
+	<!--<xs:import namespace="http://standards.iso.org/iso/19115/-3/mrl/2.0" schemaLocation="../../../../standards.iso.org/19115/-3/mrl/2.0/mrl.xsd"/>-->
+	
+
+	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+
+	<!-- For imports from ISO's site, replace "../../../../standards.iso.org" in schemaLocation attributes with "https://standards.iso.org/iso" -->
+
+	<xs:simpleType name="griddingMethodType">
+		<xs:annotation>
+			<xs:documentation>Gridding methods</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="basicWeightedMean">
+				<xs:annotation><xs:documentation>The Basic Weighted Mean algorithm
+					computes an average depth for each grid
+					node. Contributing depth estimates within a
+					given area of influence are weighted and
+					averaged to compute the final nodal value</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="shoalestDepth">
+				<xs:annotation><xs:documentation>The Shoalest Depth algorithm examines
+					depth estimates within a specific area of
+					influence and assigns the shoalest value to
+					the nodal position. The resulting surface
+					represents the shallowest depths across a
+					given area</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="tpuWeightedMean">
+				<xs:annotation><xs:documentation>The Total Propagated Uncertainty (TPU)
+					Weighted Mean algorithm makes use of the
+					depth and associated total propagated
+					uncertainty for each contributing depth
+					estimate to compute a weighted average
+					depth for each nodal position</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="cube">
+				<xs:annotation><xs:documentation>The Combined Uncertainty and
+					Bathymetric Estimator, or CUBE makes
+					use of the depth and associated total
+					propagated uncertainty for each contributing
+					depth estimate to compute one or many
+					hypotheses for an area of interest. The
+					resulting hypotheses are used to estimate
+					statistical representative depths at each
+					nodal position</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="nearestNeighbour">
+				<xs:annotation><xs:documentation>The Nearest Neighbour algorithm identifies
+					the nearest depth value within an area of
+					interest and assigns that value to the nodal
+					position. This method does not consider
+					values from neighbouring points</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="naturalNeighbour">
+				<xs:annotation><xs:documentation>Natural Neighbour interpolation identifies
+					and weights a subset of input samples within
+					the area of interest to interpolate the final
+					nodal value</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="polynomialTendency">
+				<xs:annotation><xs:documentation>The Polynomial Tendency gridding method
+					attempts to fit a polynomial trend, or best fit
+					surface to a set of input data points. This
+					method can project trends into areas with
+					little to no data, but does not work well when
+					there is no discernible trend within the data
+					set></xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="spline">
+				<xs:annotation><xs:documentation>The Spline algorithm estimates nodal
+					depths using a mathematical function to
+					minimize overall surface curvature. The final
+					“smoothed” surface passes exactly through
+					the contributing input depth estimates</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="kriging">
+				<xs:annotation><xs:documentation>Kriging is a geostatistical interpolation
+					method that generates an estimated surface
+					from a scattered set of points with a known
+					depth</xs:documentation></xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+
+	
+	
+
+	<xs:element name="S102_DatasetDiscoveryMetadata" type="S102_DatasetDiscoveryMetadata" substitutionGroup="S100XC:S100_DatasetDiscoveryMetadata"/>
+	<xs:complexType name="S102_DatasetDiscoveryMetadata">
+		<xs:annotation>
+			<xs:documentation>Metadata about S-102 individual datasets.</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="S100XC:S100_DatasetDiscoveryMetadata">
+				<xs:sequence>
+					<xs:element name="griddingMethod" type="griddingMethodType" minOccurs="1" maxOccurs="1"><xs:annotation><xs:documentation>Gridding method</xs:documentation></xs:annotation></xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	
+	<!-- ============================================================
+	Types for elements derived from ISO types
+	============================================================ -->
+	<!-- none -->
+	
+
+	
+
+</xs:schema>

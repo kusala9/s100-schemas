@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CT_CodelistCatalogue xmlns="http://standards.iso.org/iso/19115/-3/cat/1.0" 
+   xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" 
+   xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml32="http://www.opengis.net/gml/3.2" 
+   xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/cat/1.0 https://standards.iso.org/iso/19115/-3/cat/1.0/cat.xsd
+   http://standards.iso.org/iso/19115/-3/gco/1.0 http://standards.iso.org/iso/19115/-3/gco/1.0/gco.xsd
+   http://www.opengis.net/gml/3.2 http://standards.iso.org/iso/19136/gml.xsd
+   http://www.w3.org/1999/xlink http://www.w3.org/1999/xlink.xsd">
+<!-- 
+© Copyright 2018
+Prepared under contract for NOAA (Original)
+
+License (Draft)
+Certain parts of this document refer to or are based on the standards, documents, schemas, or other material
+of the International Organization for Standardization (ISO), Open Geospatial Consortium (OGC), International
+Hydrographic Organization / Organisation Hydrographique Internationale (IHO/OHI).
+The ISO material can be obtained from any ISO member and from the Web site of the ISO Central Secretariat
+at www.iso.org.
+The OGC material can be obtained from the OGC Web site at www.opengeospatial.org.
+The IHO material can be obtained from the IHO Web site at www.iho.int or from the International Hydrographic
+Bureau.
+
+Permission to copy and distribute this document is hereby granted provided that this notice is retained
+on all copies, and that IHO and NOAA are credited when the material is redistributed or used in
+part or whole in derivative works.
+Redistributions in binary form must reproduce this notice in the documentation and/or other materials
+provided with the distribution.
+
+Disclaimer
+This work is provided by the copyright holders and contributors "as is" and any express or implied warranties,
+including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose
+are disclaimed. In no event shall the copyright owner or contributors be liable for any direct, indirect,
+incidental, special, exemplary, or consequential damages (including, but not limited to, procurement of substitute
+goods or services; loss of use, data, or profits; or business interruption) however caused and on any theory of
+liability, whether in contract, strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of this software, even if advised of the possibility of such damage.
+
+Document history:
+Version 1.0.0 Build 20181105	Prepared by: Raphael Malyankar (Portolan Sciences LLC) for NOAA.
+ -->
+   <!-- 2020-04-14 (RMM) Updated to fix schemaLocation links to resources recently removed by ISO standards.iso.org server -->
+   
+   <!--
+      This codelist catalog contains only S-111 specific codelists.
+    -->
+   <cat:name>
+      <gco:CharacterString>S-111 Metadata Codelists</gco:CharacterString>
+   </cat:name>
+   <cat:scope>
+      <gco:CharacterString>Codelists for S-111 (Surface Currents) metadata.</gco:CharacterString>
+   </cat:scope>
+   <cat:fieldOfApplication>
+      <gco:CharacterString>Codelists defined for in S-111 metadata</gco:CharacterString>
+   </cat:fieldOfApplication>
+   <cat:versionNumber>
+      <gco:CharacterString>1.0.0</gco:CharacterString>
+   </cat:versionNumber>
+   <cat:versionDate>
+      <gco:Date>2018-11-05</gco:Date>
+   </cat:versionDate>
+   
+
+<cat:codelistItem>
+      <cat:CT_Codelist id="S111_MD_TypeOfCurrentData">
+         <cat:identifier>
+            <gco:ScopedName codeSpace="http://www.iho.int/S111/1.0.0/md/1.0">S111_MD_TypeOfCurrentData</gco:ScopedName>
+         </cat:identifier>
+         <cat:name>
+            <gco:ScopedName codeSpace="http://www.iho.int/S111/1.0.0/md/1.0">S111_MD_TypeOfCurrentData</gco:ScopedName>
+         </cat:name>
+         <cat:definition>
+            <gco:CharacterString>Types of surface current data, based on the source of the data</gco:CharacterString>
+         </cat:definition>
+         <cat:description>
+            <gco:CharacterString>Types of surface current data, based on the source of the data</gco:CharacterString>
+         </cat:description>
+         <cat:codeEntry>
+            <cat:CT_CodelistValue id="S111_MD_TypeOfCurrentData_historicalObservation">
+               <cat:identifier>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData">historicalObservation</gco:ScopedName>
+               </cat:identifier>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData">historicalObservation</gco:ScopedName>
+               </cat:name>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData/numCode">1</gco:ScopedName>
+               </cat:name>
+               <cat:definition>
+                  <gco:CharacterString>Historical observation</gco:CharacterString>
+               </cat:definition>
+               <description><gco:CharacterString>Observation made hours, days, etc., in the past</gco:CharacterString></description>
+            </cat:CT_CodelistValue>
+         </cat:codeEntry>
+         <cat:codeEntry>
+            <cat:CT_CodelistValue id="S111_MD_TypeOfCurrentData_realTimeObservation">
+               <cat:identifier>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData">realTimeObservation</gco:ScopedName>
+               </cat:identifier>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData">realTimeObservation</gco:ScopedName>
+               </cat:name>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData/numCode">2</gco:ScopedName>
+               </cat:name>
+               <cat:definition>
+                  <gco:CharacterString>Real-time observation</gco:CharacterString>
+               </cat:definition>
+               <description><gco:CharacterString>Observation no more than a few minutes old</gco:CharacterString></description>
+            </cat:CT_CodelistValue>
+         </cat:codeEntry>
+         <cat:codeEntry>
+            <cat:CT_CodelistValue id="S111_MD_TypeOfCurrentData_astronomicalPrediction">
+               <cat:identifier>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData">astronomicalPrediction</gco:ScopedName>
+               </cat:identifier>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData">astronomicalPrediction</gco:ScopedName>
+               </cat:name>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData/numCode">3</gco:ScopedName>
+               </cat:name>
+               <cat:definition>
+                  <gco:CharacterString>Astronomical prediction</gco:CharacterString>
+               </cat:definition>
+               <description><gco:CharacterString>Value computed using harmonic constants only</gco:CharacterString></description>
+            </cat:CT_CodelistValue>
+         </cat:codeEntry>
+         <cat:codeEntry>
+            <cat:CT_CodelistValue id="S111_MD_TypeOfCurrentData_analysisOrHybridMethod">
+               <cat:identifier>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData">analysisOrHybridMethod</gco:ScopedName>
+               </cat:identifier>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData">analysisOrHybridMethod</gco:ScopedName>
+               </cat:name>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData/numCode">4</gco:ScopedName>
+               </cat:name>
+               <cat:definition>
+                  <gco:CharacterString>Analysis or hybrid method</gco:CharacterString>
+               </cat:definition>
+               <description><gco:CharacterString>Calculation by statistical or other indirect methods, or a combination of methods</gco:CharacterString></description>
+            </cat:CT_CodelistValue>
+         </cat:codeEntry>
+         <cat:codeEntry>
+            <cat:CT_CodelistValue id="S111_MD_TypeOfCurrentData_hydrodynamicModelHindcast">
+               <cat:identifier>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData">hydrodynamicModelHindcast</gco:ScopedName>
+               </cat:identifier>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData">hydrodynamicModelHindcast</gco:ScopedName>
+               </cat:name>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData/numCode">5</gco:ScopedName>
+               </cat:name>
+               <cat:definition>
+                  <gco:CharacterString>Hydrodynamic model hindcast</gco:CharacterString>
+               </cat:definition>
+               <description><gco:CharacterString>Gridded data from a two- or three-dimensional dynamic simulation of past conditions using only observed data for boundary forcing</gco:CharacterString></description>
+            </cat:CT_CodelistValue>
+         </cat:codeEntry>
+         <cat:codeEntry>
+            <cat:CT_CodelistValue id="S111_MD_TypeOfCurrentData_hydrodynamicModelForecast">
+               <cat:identifier>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData">hydrodynamicModelForecast</gco:ScopedName>
+               </cat:identifier>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData">hydrodynamicModelForecast</gco:ScopedName>
+               </cat:name>
+               <cat:name>
+                  <gco:ScopedName codeSpace="#S111_MD_TypeOfCurrentData/numCode">6</gco:ScopedName>
+               </cat:name>
+               <cat:definition>
+                  <gco:CharacterString>Hydrodynamic model forecast</gco:CharacterString>
+               </cat:definition>
+               <description><gco:CharacterString>Gridded data from a two- or three-dimensional dynamic simulation of future conditions using predicted data for boundary forcing</gco:CharacterString></description>
+            </cat:CT_CodelistValue>
+         </cat:codeEntry>
+      </cat:CT_Codelist>
+   </cat:codelistItem>
+</CT_CodelistCatalogue>

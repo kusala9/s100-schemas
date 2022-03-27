@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sample ECDIS Interoperability Catalogue Version 0.5 July-21-2016 -->
+<!-- Updated July 31 2017; December 12 2017; April 9 2019; May 3, 2019 -->
+<?xml-model href="../../../../../schemas/S98/1.0.0/FMT/20190422/S100_IC.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<S100IC:S100_IC_InteroperabilityCatalogue xmlns:S100IC="http://www.iho.int/S100/IC"
+	xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0"
+	xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
+	xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.iho.int/S100/IC ../../../../../schemas/S98/1.0.0/FMT/20190422/S100_IC.xsd">
+
+	<cat:name><gco:CharacterString>098JS010000</gco:CharacterString></cat:name>
+	<cat:scope><gco:CharacterString>interoperability</gco:CharacterString></cat:scope>
+	<cat:versionNumber><gco:CharacterString>1.0.0</gco:CharacterString></cat:versionNumber>
+	<cat:versionDate><gco:Date>2019-03-31</gco:Date></cat:versionDate>
+	<cat:language><gco:CharacterString>English</gco:CharacterString></cat:language>
+	<description>Example of interoperation catalogue structure</description>
+	<comment>This is a hypothethical example showing only the structure of an interoperability catalogue file.
+		The contents do not describe a real interoperability scenario. Features may not correspond to actual
+		features in the product(s) indicated.</comment>
+	<digitalSignatureReference>dsa</digitalSignatureReference>
+	<digitalSignatureValue>
+		<signedPublicKey id="JUSSLANDHO" rootKey="IHO">MIIBtjCCASsGByqGSM44BAEwggEeAoGBAMwvcLfFri7k1qxaTwztsWCgcYqOhNpKx7vIzstyiVM+xZlfgljKDToRQito0AIy9nkfXCOXA1QzuUhMNoLim8s1oudLOeiDwjHq7fnm/HNQVLNKG9XFxOSChBz8AaknPTPnSRuTv1JiTKzH17CAGhkCFzqf7kK+AexqttT05skhAhUApHDc0AdnfLvcB6lQco/biZ7cv2UCgYBDWl36giFV2j4R2B7AxDmwwylcif7KiEeU9T+rrzQbQfIMCJeRLHVmNe0uO/L9YStBWNd+7vUIHQVzRNRmcODHlQTbojm8FSofNyOKc3LbQraAlMG/dcrDX7XafgFpdeCcyNyntD+7nd076zATYec5Ad4RJeo1Bq/UphJPYBSpNgOBhAACgYAIb5BNjP4YJOw/y7dcUS2k7aLt3YaWEM8sIyhOAGo4Z8bpzdDRkj5NYSYSzqKzHBTVRxPna4YKf7XvTQwflhWDDCo+yCuYirLFsmMJv5Mp8wL8+MXZNr4IA1k/xgTBCZfZPdbAaGpoQ4nmgt0tQyJBxck+M2jUjGbQ2VCECIsNQQ==</signedPublicKey>
+		<digitalSignature>302C021433796C6647CC1C55A67DC72FA7C6E157A6594B2B02145D3768B44F3A6ABA11A77178B738AD3B6A0DE344</digitalSignature>
+	</digitalSignatureValue>
+	<requirementType>IHO</requirementType>
+	<productCovered>S-101</productCovered>
+	<productCovered>S-102</productCovered>
+	<productCovered>S-111</productCovered>
+	<productCovered>S-104</productCovered>
+	<productCovered>S-122</productCovered>
+	<productCovered>S-124</productCovered>
+	<productCovered>S-411</productCovered>
+	<productCovered>S-412</productCovered>
+	<productCovered>S-129</productCovered>
+	
+	<displayPlanes>
+		<S100_IC_DisplayPlane>	
+			<identifier>1</identifier>
+			<name>base</name>
+			<displayPriority>1</displayPriority>
+			<description>new SOE</description>
+			<features>
+				<S100_IC_Feature>
+					<identifier>urn:mrn:iho:s101:1.0:LNDARE</identifier>
+					<featureCode>LandArea</featureCode>
+					<product>S-101</product>
+					<drawOrder>1</drawOrder>
+					<viewingGroup>20260</viewingGroup>
+				</S100_IC_Feature>
+			</features>
+			<drawingInstructions>
+				<S100_IC_DrawingInstruction>
+					<identifier>123456</identifier>
+					<featureCode>LandArea</featureCode>
+					<product>S-101</product>
+					<geometryType>curve</geometryType>
+					<drawingOrder>1</drawingOrder>
+					<viewingGroup>20260</viewingGroup>
+				</S100_IC_DrawingInstruction>
+				<S100_IC_DrawingInstruction>
+					<identifier>123457</identifier>
+					<featureCode>LandArea</featureCode>
+					<product>S-101</product>
+					<geometryType>surface</geometryType>
+					<drawingOrder>2</drawingOrder>
+					<viewingGroup>20260</viewingGroup>
+				</S100_IC_DrawingInstruction>
+				<S100_IC_DrawingInstruction>
+					<identifier>123458</identifier>
+					<featureCode>Current</featureCode>
+					<product>S-101</product>
+					<geometryType>surface</geometryType>
+					<drawingOrder>2</drawingOrder>
+					<viewingGroup>20260</viewingGroup>
+				</S100_IC_DrawingInstruction>
+			</drawingInstructions>
+		</S100_IC_DisplayPlane>
+		<S100_IC_DisplayPlane>
+			<identifier>2</identifier>
+			<name>baseBathy</name>
+			<displayPriority>2</displayPriority>
+			<description>all S-101 bathy features are located here</description>
+			<features>
+				<S100_IC_Feature>
+					<identifier>urn:mrn:iho:s101:1.0:DEPARE</identifier>
+					<featureCode>DepthArea</featureCode>
+					<product>S-101</product>
+					<drawOrder>1</drawOrder>
+					<viewingGroup>20280</viewingGroup>
+				</S100_IC_Feature>
+				<S100_IC_Feature>
+					<identifier>urn:mrn:iho:s101:1.0:DEPCNT</identifier>
+					<featureCode>DepthContour</featureCode>
+					<product>S-101</product>
+					<drawOrder>2</drawOrder>
+					<viewingGroup>20280</viewingGroup>
+				</S100_IC_Feature>
+			</features>
+			<drawingInstructions>
+				<S100_IC_DrawingInstruction>
+					<identifier>85743</identifier>
+					<featureCode>DepthArea</featureCode>
+					<product>S-101</product>
+					<drawingOrder>2</drawingOrder>
+					<viewingGroup>20280</viewingGroup>
+				</S100_IC_DrawingInstruction>
+				<S100_IC_DrawingInstruction>
+					<identifier>85744</identifier>
+					<featureCode>DepthContour</featureCode>
+					<product>S-101</product>
+					<drawingOrder>2</drawingOrder>
+					<viewingGroup>20280</viewingGroup>
+				</S100_IC_DrawingInstruction>
+			</drawingInstructions>
+		</S100_IC_DisplayPlane>
+		<S100_IC_DisplayPlane>
+			<identifier>3</identifier>
+			<name>overBaseBathy</name>
+			<displayPriority>3</displayPriority>
+			<description>all S-102 bathy features are located here</description>
+			<features>
+				<S100_IC_Feature>
+					<identifier>urn:mrn:iho:s102:1.0:DepthCoverage</identifier>
+					<featureCode>DepthCoverage</featureCode>
+					<product>S-102</product>
+					<drawOrder>1</drawOrder>
+					<viewingGroup>20280</viewingGroup>
+				</S100_IC_Feature>
+				<S100_IC_Feature>
+					<identifier>urn:mrn:iho:s102:1.0:DepthCoverageSafetyContour</identifier>
+					<featureCode>DepthCoverageSafetyContour</featureCode>
+					<product>S-102</product>
+					<drawOrder>2</drawOrder>
+					<viewingGroup>20280</viewingGroup>
+				</S100_IC_Feature>
+			</features>
+			<drawingInstructions>
+				<S100_IC_DrawingInstruction>
+					<identifier>3a</identifier>
+					<featureCode>DepthCoverageSafetyContour</featureCode>
+					<product>S-102</product>
+					<drawingOrder>3</drawingOrder>
+					<viewingGroup>20280</viewingGroup>
+					<substituteSymbolization><![CDATA[
+						/* S Y M D Symbol Definition */
+						/* Defines several symbol-parameters.*/
+						SYNM A(8) /* name of the symbol; */
+						SYDF A(1) /* type of symbol definition: V Vector definition R Raster definition */
+						SYCL I(5) /* pivot-point's column-number; SYCL is counted from the top, left corner of the vector/raster space to the right; -9999(left)<= SYCL <=32767(right)*/
+						SYRW I(5) /* pivot-point's row-number; PROW is counted from the top, left corner of the vector/raster space to the bottom ; -9999(top)<= SYRW <= 32767(bottom) */
+						SYHL I(5) /* width of bounding box; where 1<= PAHL <=128 for raster and where 1<= PAHL <=32767 for vector Note: does not include vector line width */
+						SYVL I(5) /* height of bounding box; where 1<= PAVL <=128 for raster and where 1<= PAGL <=32767 for vector Note: does not include vector line width */
+						SBXC I(5) /* bounding box upper left column number; where 1<= SBXC <=128 for raster and where 1<= SBXC <=32767 for vector */
+						SBXR I(5) /* bounding box upper left row number; where 1<= SBXR <=128 for raster and where 1<= SBXR <=32767 for vector */</substituteSymbolization>
+					]]></substituteSymbolization></S100_IC_DrawingInstruction>
+			</drawingInstructions>
+		</S100_IC_DisplayPlane>
+		<S100_IC_DisplayPlane>
+			<identifier>4</identifier>
+			<name>currents</name>
+			<displayPriority>1</displayPriority>
+			<description>current data</description>
+			<features>
+				<S100_IC_Feature>
+					<identifier>urn:mrn:iho:s101:1.0:CURENT</identifier>
+					<featureCode>CurrentNonGravitational</featureCode>
+					<product>S-101</product>
+					<drawOrder>1</drawOrder>
+					<viewingGroup>20240</viewingGroup>
+				</S100_IC_Feature>
+			</features>
+			<drawingInstructions>
+				<S100_IC_DrawingInstruction>
+					<identifier>4A</identifier>
+					<featureCode>CurrentNonGravitational</featureCode>
+					<product>S-101</product>
+					<drawingOrder>1</drawingOrder>
+					<viewingGroup>20240</viewingGroup>
+					<substituteSymbolization>
+						<pc catalogid="IHOICPCEXMP0001">
+							<symbol id="CURENTZ1">
+								<description>
+									<name>CURENTZ1</name>
+									<description>non-tidal current (replacement symbol)</description>
+									<language>en</language>
+								</description>
+								<fileName>CURENTZ1.svg</fileName>
+								<fileType>Symbol</fileType>
+								<fileFormat>SVG</fileFormat>
+							</symbol>
+							<lineStyle id="CURENTZ1">
+								<description>
+									<name>CURENTZ1</name>
+									<description>non-tidal current</description>
+									<language>en</language>
+								</description>
+								<fileName>CURENTZ1.xml</fileName>
+								<fileType>LineStyle</fileType>
+								<fileFormat>XML</fileFormat>
+							</lineStyle>
+						</pc>
+					</substituteSymbolization>
+				</S100_IC_DrawingInstruction>
+			</drawingInstructions>
+		</S100_IC_DisplayPlane>
+	</displayPlanes>	
+	<predefinedProductCombinations>
+		<S100_IC_PredefinedCombination>
+			<identifier>urn:mrn:iho:iop:0.1:pdc:1</identifier>
+			<name>ENCandCurrents</name>
+			<description>combined S-101 and S-111 - suppressing all ENC current info</description>
+			<useConditions>all conditions</useConditions>
+			<interoperabilityLevel>2</interoperabilityLevel>
+			<includedProduct>S-101</includedProduct>
+			<includedProduct>S-111</includedProduct>
+			<suppressedFeatureLayers>
+				<S100_IC_SuppressedFeatureLayer>
+					<identifier>urn:mrn:iho:iop:0.1:sfl:1</identifier>
+					<featureCode>CurrentNonGravitational</featureCode>
+					<product>S-101</product>
+					<featureRef>urn:mrn:iho:s111:1.0:CURENT</featureRef>
+				</S100_IC_SuppressedFeatureLayer>
+			</suppressedFeatureLayers>
+		</S100_IC_PredefinedCombination>
+	</predefinedProductCombinations>
+</S100IC:S100_IC_InteroperabilityCatalogue>
